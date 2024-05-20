@@ -5,6 +5,7 @@ CLI-based and works based off of the process ID. Call it using <strong>.\LibLoad
 
 
 First, figure out what the target process is based on the provided process ID (PID). Then, open Kernel32.dll and get the LoadLibraryW function (W for wide, as opposed to ANSI)
+
 ![Screenshot 2024-05-19 233343](https://github.com/rnguyen513/Injector64/assets/77138030/ac9202ef-b58b-45c3-9b84-57134536cdfc)
 
 Allocate buffer region somewhere random in the process memory space (can change the second parameter from NULL to whatever address, but by default the system finds a random spot for you). After instantitating that buffer, we can write the path (wPath) to our payload DLL to it.
